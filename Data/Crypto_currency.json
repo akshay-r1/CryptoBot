@@ -1,0 +1,297 @@
+﻿{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "what is the highest value of Bitcoin",
+        "intent": "GetHighestValueByName",
+        "entities": [
+          {
+            "start": 29,
+            "end": 36,
+            "value": "Bitcoin",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "what was the highest value of Ethereum",
+        "intent": "GetHighestValueByName",
+        "entities": [
+          {
+            "start": 30,
+            "end": 38,
+            "value": "Ethereum",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "highest value of Bitcoin",
+        "intent": "GetHighestValueByName",
+        "entities": [
+          {
+            "start": 17,
+            "end": 24,
+            "value": "Bitcoin",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "highest Ethereum has reached",
+        "intent": "GetHighestValueByName",
+        "entities": [
+          {
+            "start": 8,
+            "end": 16,
+            "value": "Ethereum",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "show me highest value of Litecoin",
+        "intent": "GetHighestValueByName",
+        "entities": [
+          {
+            "start": 25,
+            "end": 33,
+            "value": "Litecoin",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "show me list of cryptocurrencies",
+        "intent": "CryptoList",
+        "entities": []
+      },
+      {
+        "text": "list of cryptos",
+        "intent": "CryptoList",
+        "entities": []
+      },
+      {
+        "text": "list of cryptocurrencies",
+        "intent": "CryptoList",
+        "entities": []
+      },
+      {
+        "text": "what is the status of Bitcoin",
+        "intent": "GetStatusByName",
+        "entities": [
+          {
+            "start": 22,
+            "end": 29,
+            "value": "Bitcoin",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "what's the status of Ethereum",
+        "intent": "GetStatusByName",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "Ethereum",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "show me status of Ripple",
+        "intent": "GetStatusByName",
+        "entities": [
+          {
+            "start": 18,
+            "end": 24,
+            "value": "Ripple",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "what are the attributes in the database",
+        "intent": "AttributesKnowledgeBase",
+        "entities": []
+      },
+      {
+        "text": "list the attributes",
+        "intent": "AttributesKnowledgeBase",
+        "entities": []
+      },
+      {
+        "text": "what does the database hold",
+        "intent": "AttributesKnowledgeBase",
+        "entities": []
+      },
+      {
+        "text": "hey",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hello",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hi",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hello there",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "yes",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "yep",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "yeah",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "bye",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "goodbye",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "stop",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "end",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "exit",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "Intro",
+        "intent": "intro",
+        "entities": []
+      },
+      {
+        "text": "What do you do?",
+        "intent": "intro",
+        "entities": []
+      },
+      {
+        "text": "How can you help me",
+        "intent": "intro",
+        "entities": []
+      },
+      {
+        "text": "Plot daily graph of bitcoin",
+        "intent": "PlotCurrencyGraph",
+        "entities": [
+          {
+            "start": 20,
+            "end": 27,
+            "value": "bitcoin",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "Ethereum graph",
+        "intent": "PlotCurrencyGraph",
+        "entities": [
+          {
+            "start": 0,
+            "end": 8,
+            "value": "Ethereum",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "Daily graph of Ripple",
+        "intent": "PlotCurrencyGraph",
+        "entities": [
+          {
+            "start": 15,
+            "end": 21,
+            "value": "Ripple",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "plot a graph for Litecoin",
+        "intent": "PlotCurrencyGraph",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "Litecoin",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "predict next month values for bitcoin",
+        "intent": "Prediction",
+        "entities": [
+          {
+            "start": 30,
+            "end": 37,
+            "value": "bitcoin",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "predict future values of bitcoin vs ripple",
+        "intent": "Prediction",
+        "entities": [
+          {
+            "start": 25,
+            "end": 32,
+            "value": "bitcoin",
+            "entity": "Crypto"
+          },
+          {
+            "start": 36,
+            "end": 42,
+            "value": "ripple",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "predict ethereum future values",
+        "intent": "Prediction",
+        "entities": [
+          {
+            "start": 8,
+            "end": 16,
+            "value": "ethereum",
+            "entity": "Crypto"
+          }
+        ]
+      }
+    ]
+  }
+}
