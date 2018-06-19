@@ -14,7 +14,6 @@ def AttributesKnowledgeBase(data):
         print(e)
         response_text="Oops seems like something is wrong with my database. Try again in some time"
         return response_text
-
 def GetHighestValueByName(data,crypto):
     try:
         data = data.groupby('name')['high'].max()
@@ -26,18 +25,16 @@ def GetHighestValueByName(data,crypto):
         return response_text
 def GetStatusByName(data,entities):
     try:
-        final = data[-1]
-        print (final)
-        response_text = "The atrributes available to me include "
-        for x in final:
-            print str(x)
-            response_text += str(x) + " , "
-        response_text = str(response_text[0:-3])
-        print (response_text)
+        response_text =''
+        print(data,entities)
+        for i in entities:
+            data1 = data.loc[data['name'] == i['value'].title()]
+            response_text = response_text + str(i['value'].title()) +' last known value to me for the date ' +str(data1[-1]['date']) +' is : ' +str(data1[-1]['close']) +"\n"
+            print (response_text)
         return response_text
     except Exception as e:
         print(e)
-        response_text = "Oops seems like something is wrong with my database. Try again in some time"
+        response_text = "Oops seems like something wrong with database. Error: " + str(e)
         return response_text
 
 def CryptoList(data):
@@ -51,22 +48,14 @@ def CryptoList(data):
         print(e)
         response_text = "Oops seems like something is wrong with my database. Try again in some time"
         return response_text
-
-
+def PlotCurrencyGraph(data,crypto):
+    import matplotlib.pyplot as plt
+    try:
+        for i in crypto:
+            data1 = data.loc[data['name'] == i['value'].title()]
+            plt.plot(data1['high'],label=i['value'].title())
+            plt.legend(loc='best')
+        plt.savefig('DailyGraph.png')
+    except Exception as e:
+        print(e)
         
-'''if intent==CryptoList:
-            CryptoList()
-        if intent==GetHighestValueByName:
-            GetHighestValueByName()
-        if intent==GetStatusByName:
-            GetStatusByName()
-        '''
-''' def CryptoList():
-        
-    def GetHighestValueByName():
-
-    def GetStatusByName():
-
-'''
-
-
