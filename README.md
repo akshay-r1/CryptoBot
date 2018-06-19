@@ -24,3 +24,5 @@ $ python app.py
 Run these 2 commands on seperate terminals to set up the bot on local system.
 
 Simple bot using a Kaggle Cryptocurrency database. Free to use, distribute, play with as you like. 
+
+Added iPython Notebook "Crypto Workbook" for individual component testing. 
