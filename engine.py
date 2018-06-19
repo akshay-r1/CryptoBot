@@ -14,6 +14,7 @@ def AttributesKnowledgeBase(data):
         print(e)
         response_text="Oops seems like something is wrong with my database. Try again in some time"
         return response_text
+
 def GetHighestValueByName(data,crypto):
     try:
         data = data.groupby('name')['high'].max()
@@ -23,13 +24,14 @@ def GetHighestValueByName(data,crypto):
         print(e)
         response_text = "Oops seems like something wrong with database. Error: " + str(e)
         return response_text
+
 def GetStatusByName(data,entities):
     try:
         response_text =''
         print(data,entities)
         for i in entities:
             data1 = data.loc[data['name'] == i['value'].title()]
-            response_text = response_text + str(i['value'].title()) +' last known value to me for the date ' +str(data1[-1]['date']) +' is : ' +str(data1[-1]['close']) +"\n"
+            response_text = response_text + str(i['value'].title()) +' last known value to me for the date ' +str(data1.index[-1].date()) +' is : ' +str(data1['close'][-1]) +"\n"
             print (response_text)
         return response_text
     except Exception as e:
@@ -48,6 +50,7 @@ def CryptoList(data):
         print(e)
         response_text = "Oops seems like something is wrong with my database. Try again in some time"
         return response_text
+        
 def PlotCurrencyGraph(data,crypto):
     import matplotlib.pyplot as plt
     try:
