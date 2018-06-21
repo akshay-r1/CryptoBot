@@ -70,7 +70,8 @@ def PlotCurrencyGraph(data,crypto):
         print(e)
         response_text = "Oops seems like something wrong with database. Error: " + str(e)
         return response_text
-        
+
+#intent to get closing value for a date        
 def GetCloseByDate(data,entities):
     try:
         import pandas as pd
