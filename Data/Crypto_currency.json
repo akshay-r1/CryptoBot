@@ -50,13 +50,19 @@
         ]
       },
       {
-        "text": "show me highest value of Litecoin",
+        "text": "show me highest value of Litecoin, Bitcoin",
         "intent": "GetHighestValueByName",
         "entities": [
           {
             "start": 25,
             "end": 33,
             "value": "Litecoin",
+            "entity": "Crypto"
+          },
+          {
+            "start": 35,
+            "end": 42,
+            "value": "Bitcoin",
             "entity": "Crypto"
           }
         ]
@@ -77,13 +83,19 @@
         "entities": []
       },
       {
-        "text": "what is the status of Bitcoin",
+        "text": "what is the status of Bitcoin and Ethereum",
         "intent": "GetStatusByName",
         "entities": [
           {
             "start": 22,
             "end": 29,
             "value": "Bitcoin",
+            "entity": "Crypto"
+          },
+          {
+            "start": 34,
+            "end": 42,
+            "value": "Ethereum",
             "entity": "Crypto"
           }
         ]
@@ -101,13 +113,19 @@
         ]
       },
       {
-        "text": "show me status of Ripple",
+        "text": "show me status of Ripple, Ethereum",
         "intent": "GetStatusByName",
         "entities": [
           {
             "start": 18,
             "end": 24,
             "value": "Ripple",
+            "entity": "Crypto"
+          },
+          {
+            "start": 26,
+            "end": 34,
+            "value": "Ethereum",
             "entity": "Crypto"
           }
         ]
@@ -288,6 +306,72 @@
             "start": 8,
             "end": 16,
             "value": "ethereum",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "Bitcoin highest value",
+        "intent": "GetHighestValueByName",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "Bitcoin",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "What was the closing value of bitcoin on 30-01-2018",
+        "intent": "GetCloseByDate",
+        "entities": [
+          {
+            "start": 41,
+            "end": 51,
+            "value": "30-01-2018",
+            "entity": "date"
+          },
+          {
+            "start": 30,
+            "end": 37,
+            "value": "bitcoin",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "Get closing value of ethereum on 15th Feb 2017",
+        "intent": "GetCloseByDate",
+        "entities": [
+          {
+            "start": 33,
+            "end": 46,
+            "value": "15th Feb 2017",
+            "entity": "date"
+          },
+          {
+            "start": 21,
+            "end": 29,
+            "value": "ethereum",
+            "entity": "Crypto"
+          }
+        ]
+      },
+      {
+        "text": "Bitcoin closed at what value on 28:03:2018",
+        "intent": "GetCloseByDate",
+        "entities": [
+          {
+            "start": 32,
+            "end": 42,
+            "value": "28:03:2018",
+            "entity": "date"
+          },
+          {
+            "start": 0,
+            "end": 7,
+            "value": "Bitcoin",
             "entity": "Crypto"
           }
         ]

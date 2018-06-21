@@ -6,6 +6,7 @@ import pandas as pd
 import random
 from engine import *
 
+#Function to acquire data
 def exportdatabase():
     try:
         data = pd.read_csv('./Data Directory/crypto-markets.csv',parse_dates=['date'], index_col='date')
@@ -19,14 +20,14 @@ app = Flask(__name__)
 app.secret_key = '12345'
 
 
-
+#Function to render base template
 @app.route('/')
 def hello_world():
     return render_template('home.html')
 
 get_random_response = lambda intent:random.choice(intent_response_dict[intent])
 
-
+#Chat routing function
 @app.route('/chat',methods=["POST"])
 def chat():
     try:
@@ -38,7 +39,7 @@ def chat():
         entities = response.get("entities")
         intent = response.get("intent")
         print("Intent {}, Entities {}".format(intent,entities))
-        if intent['confidence']<0.2:
+        if intent['confidence']<0.175:
             response_text = "Sorry my classification has given a low confidence value. Unlikely to give right answer. Please rephrase and try again"
         elif intent['name'] == "intro" or intent['name']== "greet" or intent['name']=="goodbye" or intent['name']=="affirm":
             response_text = get_random_response(intent['name']) # intro greet intents
@@ -49,8 +50,9 @@ def chat():
         elif intent['name']== "GetStatusByName":
             response_text = GetStatusByName(data,entities)
         elif intent['name']=="GetHighestValueByName":
-            response_text = GetHighestValueByName(data,entities[0]['value'])
-            response_text = '$' + str(response_text)
+            response_text = GetHighestValueByName(data,entities)
+        elif intent['name']=="GetCloseByDate":
+            response_text = GetCloseByDate(data,entities)
         elif intent['name']=="PlotCurrencyGraph":
             PlotCurrencyGraph(data, entities)
             response_text = "The graph has been generated but due to unfortunate circumstances, I cant display it for you using the conventional method. It can be found at http://localhost:8888/view/Project/Crypto3.0/DailyGraph.png"
@@ -60,7 +62,7 @@ def chat():
         print(e)
         return jsonify({"status":"success","response":"Sorry I am not trained to do that yet..."})
 
-
+#Debugging options set up
 app.config["DEBUG"] = True
 if __name__ == "__main__":
     app.run(port=8080)
