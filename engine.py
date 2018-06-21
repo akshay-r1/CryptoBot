@@ -37,7 +37,6 @@ def GetStatusByName(data,entities):
         for i in entities:
             data1 = data.loc[data['name'] == i['value'].title()]
             response_text = response_text + str(i['value'].title()) +' last known value to me for the date ' +str(data1.index[-1].date()) +' is : ' +str(data1['close'][-1]) +"\n"
-            print (response_text)
         return response_text
     except Exception as e:
         print(e)
