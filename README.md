@@ -13,8 +13,6 @@ Requirements
 
 ->matplotlib
 
-->random
-
 Server commands
 
 $ python -m rasa_nlu.server
